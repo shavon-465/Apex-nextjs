@@ -13,11 +13,11 @@ export default function Hero() {
 
       <div
         className="box-border w-full h-fit shrink-0 flex flex-col lg:flex-row
-                   gap-[24px] md:gap-[32px] lg:gap-0
+                   gap-[24px] md:gap-[32px] lg:gap-[20px]
                    justify-start lg:justify-between items-end relative z-[1] lg:static"
       >
         {/* Copy + CTA */}
-        <div className="box-border w-full lg:w-[550px] h-fit lg:h-[301px] shrink-0 flex flex-col gap-[24px] justify-center lg:justify-end items-start">
+        <div className="box-border w-full lg:flex-1 lg:max-w-[550px] h-fit lg:h-[301px] shrink-0 flex flex-col gap-[24px] justify-center lg:justify-end items-start">
           <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[16px] justify-start items-start">
             <h1
               className="rot1 text-[24px] leading-[26px] md:text-[30px] md:leading-[33px] lg:text-[36px] lg:leading-[40px]
@@ -44,7 +44,7 @@ export default function Hero() {
 
         {/* Visual */}
         <div
-          className="box-border w-full h-[400px] md:h-[380px] lg:w-[620px] lg:h-[521px] shrink-0
+          className="box-border w-full h-[400px] md:h-[380px] lg:flex-1 lg:max-w-[620px] lg:h-[521px] shrink-0
                      [background-image:linear-gradient(#00000033,_#00000033),_url('/Apex-lp-assets/image.jpg')]
                      [background-repeat:no-repeat,_no-repeat] [background-size:100%_100%,_cover]
                      [background-position:0%_0%,_center] rounded-[6px] overflow-hidden"

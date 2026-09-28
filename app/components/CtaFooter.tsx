@@ -12,7 +12,7 @@ export default function CtaFooter() {
                  justify-start items-start bg-[#f4f4f5] overflow-hidden"
     >
       {/* CTA card */}
-      <div className="box-border w-full lg:w-[414px] h-fit shrink-0 flex flex-col gap-[7.1px] p-[14px] md:p-[20px] justify-start items-start bg-[#1a1a1a] rounded-[4px] lg:rounded-[6px] overflow-hidden">
+      <div className="box-border w-full lg:w-[414px] lg:shrink-0 h-fit shrink-0 flex flex-col gap-[7.1px] p-[14px] md:p-[20px] justify-start items-start bg-[#1a1a1a] rounded-[4px] lg:rounded-[6px] overflow-hidden">
         <div className="box-border w-full h-[158px] md:h-[348px] shrink-0 flex flex-col gap-[17.1px] md:gap-[24px] justify-between items-start">
           <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[8.5px] md:gap-[12px] justify-start items-start">
             <p className="text-[20px] md:text-[32px] lg:w-[273px] m-0 text-[#ffffff] font-semibold tracking-[-0.5px] lg:tracking-[-1px] whitespace-nowrap lg:whitespace-normal">
@@ -50,7 +50,7 @@ export default function CtaFooter() {
           />
         </div>
 
-        <div className="box-border w-full h-fit md:h-[114.287px] shrink-0 flex flex-col lg:flex-row gap-[20px] md:gap-[40px] lg:gap-[356.939px] justify-start lg:justify-between items-start">
+        <div className="box-border w-full h-fit md:h-[114.287px] shrink-0 flex flex-col lg:flex-row gap-[20px] md:gap-[40px] lg:gap-[40px] justify-start lg:justify-between items-start">
           {/* Left: headline + nav */}
           <div className="box-border w-fit h-fit lg:h-full shrink-0 lg:flex-1 flex flex-col gap-[17.1px] md:gap-[24px] justify-start items-start">
             <p className="rot1 text-[16px] leading-[19px] md:text-[20px] md:leading-[24px] box-border w-full m-0 max-w-[302px] md:max-w-[278px] text-[#ffffffff] font-semibold tracking-[-0.5px] text-left">

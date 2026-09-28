@@ -34,7 +34,7 @@ export default function WhyUs() {
             */
             <div
               key={title}
-              className="box-border w-full md:flex-1 lg:w-[430px] h-[280px] lg:h-[330px] shrink-0
+              className="box-border w-full md:flex-1 h-[280px] lg:h-[330px] shrink-0
                          flex flex-col gap-0 p-[20px] justify-between items-start
                          bg-[#f4f4f5] rounded-[6px] overflow-hidden"
             >

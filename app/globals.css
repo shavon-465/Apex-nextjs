@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
-/* Tailwind v4 theme: custom breakpoints matching the Pen.dev canvas frames.
-   Mobile = base (390px frame), md = tablet (834px frame), lg = desktop (1440px frame). */
+/* Tailwind v4 theme: breakpoints derived from the Pen.dev canvas frames.
+   Mobile = base (390px frame), md = tablet (834px frame), lg = desktop (1440px frame).
+
+   NOTE: `lg` ACTIVATES at 1280px, not 1440px. 1440px is the design canvas width,
+   but using it as the activation threshold meant any laptop under 1440 CSS px
+   (i.e. most of them, especially with a browser sidebar open) fell back to the
+   tablet layout. The desktop section styles are fluid, so they scale cleanly
+   from 1280px up to the 1440px max-width container. */
 @theme {
   --breakpoint-md: 834px;
-  --breakpoint-lg: 1440px;
+  --breakpoint-lg: 1280px;
 
   --font-geist: "Geist", system-ui, sans-serif;
 }
