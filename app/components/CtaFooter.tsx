@@ -12,13 +12,13 @@ export default function CtaFooter() {
                  justify-start items-start bg-[#f4f4f5] overflow-hidden"
     >
       {/* CTA card */}
-      <div className="box-border w-full lg:w-[414px] lg:shrink-0 h-fit shrink-0 flex flex-col gap-[7.1px] p-[14px] md:p-[20px] justify-start items-start bg-[#1a1a1a] rounded-[4px] lg:rounded-[6px] overflow-hidden">
+      <div className="box-border w-full lg:w-[38%] lg:max-w-[414px] lg:shrink-0 h-fit shrink-0 flex flex-col gap-[7.1px] p-[14px] md:p-[20px] justify-start items-start bg-[#1a1a1a] rounded-[4px] lg:rounded-[6px] overflow-hidden">
         <div className="box-border w-full h-[158px] md:h-[348px] shrink-0 flex flex-col gap-[17.1px] md:gap-[24px] justify-between items-start">
           <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[8.5px] md:gap-[12px] justify-start items-start">
-            <p className="text-[20px] md:text-[32px] lg:w-[273px] m-0 text-[#ffffff] font-semibold tracking-[-0.5px] lg:tracking-[-1px] whitespace-nowrap lg:whitespace-normal">
+            <p className="text-[20px] md:text-[32px] lg:max-w-[273px] m-0 text-[#ffffff] font-semibold tracking-[-0.5px] lg:tracking-[-1px] whitespace-nowrap lg:whitespace-normal">
               Upgrade your drive
             </p>
-            <p className="text-[12px] md:text-[16px] lg:w-[262px] m-0 text-[#ffffffb3] font-normal whitespace-nowrap lg:whitespace-normal">
+            <p className="text-[12px] md:text-[16px] lg:max-w-[262px] m-0 text-[#ffffffb3] font-normal whitespace-nowrap lg:whitespace-normal">
               Find the parts that make the difference.
             </p>
           </div>
