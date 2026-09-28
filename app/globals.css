@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme: custom breakpoints matching the Pen.dev canvas frames.
+   Mobile = base (390px frame), md = tablet (834px frame), lg = desktop (1440px frame). */
+@theme {
+  --breakpoint-md: 834px;
+  --breakpoint-lg: 1440px;
+
+  --font-geist: "Geist", system-ui, sans-serif;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f4f5;
+}
+
+/* Micro-rotations carried over 1:1 from the canvas design */
+.rot1 {
+  transform: rotate(0.048deg);
+  transform-origin: top left;
+}
+
+.rot2 {
+  transform: rotate(0.125deg);
+  transform-origin: top left;
+}
