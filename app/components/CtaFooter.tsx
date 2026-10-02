@@ -2,98 +2,113 @@ import Image from "next/image";
 import { FacebookIcon, WhatsAppIcon, InstagramIcon } from "./Icons";
 
 const SOCIAL_CLASS =
-  "box-border w-[20px] md:w-[24px] shrink-0 h-[20px] md:h-[24px] overflow-hidden relative";
+  "box-border w-[24px] shrink-0 h-[24px] overflow-hidden relative";
 
 export default function CtaFooter() {
   return (
     <footer
-      className="box-border w-full h-fit shrink-0 flex flex-col lg:flex-row
-                 gap-[8.5px] p-[40px_20px] md:gap-[20px] md:p-[64px_32px] lg:gap-[12px] lg:p-[80px_40px]
-                 justify-start items-start bg-[#f4f4f5] overflow-hidden"
+      className="box-border w-full h-fit shrink-0 flex flex-col
+                 gap-[40px] p-[40px_20px] md:p-[80px_40px_40px_40px]
+                 justify-start items-start bg-[#f0f0f0] overflow-hidden"
     >
-      {/* CTA card */}
-      <div className="box-border w-full lg:w-[38%] lg:max-w-[414px] lg:shrink-0 h-fit shrink-0 flex flex-col gap-[7.1px] p-[14px] md:p-[20px] justify-start items-start bg-[#1a1a1a] rounded-[4px] lg:rounded-[6px] overflow-hidden">
-        <div className="box-border w-full h-[158px] md:h-[348px] shrink-0 flex flex-col gap-[17.1px] md:gap-[24px] justify-between items-start">
-          <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[8.5px] md:gap-[12px] justify-start items-start">
-            <p className="text-[20px] md:text-[32px] lg:max-w-[273px] m-0 text-[#ffffff] font-semibold tracking-[-0.5px] lg:tracking-[-1px] whitespace-nowrap lg:whitespace-normal">
-              Upgrade your drive
+      {/* CTA panel — text + car image (stacked on mobile/tablet, side-by-side on desktop) */}
+      <div
+        className="box-border w-full h-fit shrink-0 flex flex-col lg:flex-row
+                   gap-[10px] lg:gap-[40px] p-[8px]
+                   justify-start items-stretch bg-[#1a1a1a] rounded-[6px] overflow-hidden"
+      >
+        {/* Text column */}
+        <div
+          className="box-border w-full lg:flex-[541_1_0%] shrink-0 flex flex-col
+                     gap-[56px] lg:gap-[24px] p-[12px_8px] lg:p-[12px]
+                     justify-start lg:justify-between items-start order-2 lg:order-1"
+        >
+          <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[12px] lg:gap-[16px] justify-start items-start">
+            <p className="text-[16px] md:text-[32px] lg:max-w-[454px] m-0 text-[#ffffff] font-semibold tracking-[-1px]">
+              Build Your Vehicle. Right.
             </p>
-            <p className="text-[12px] md:text-[16px] lg:max-w-[262px] m-0 text-[#ffffffb3] font-normal whitespace-nowrap lg:whitespace-normal">
-              Find the parts that make the difference.
+            <p className="text-[12px] md:text-[16px] m-0 text-[#ffffffb3] font-normal">
+              Curated, compatible parts for your specific car. Premium quality
+              meets guaranteed fitment—every upgrade, every fix.
             </p>
           </div>
           <a
             href="#"
-            className="box-border w-full h-fit shrink-0 flex flex-col gap-[7.1px] md:gap-[10px] p-[6px_11px] md:p-[8px_16px] justify-center items-center bg-[#ffffffff] rounded-[3px] lg:rounded-[4px] no-underline transition-opacity hover:opacity-90"
+            className="box-border w-full h-fit shrink-0 flex flex-col gap-[10px] p-[8px_16px] justify-center items-center bg-[#ffffff] rounded-[4px] no-underline transition-opacity hover:opacity-90"
           >
-            <span className="text-[10px] md:text-[12px] text-[#141414ff] font-medium whitespace-nowrap">
+            <span className="text-[12px] text-[#141414] font-medium whitespace-nowrap">
               Shop now
             </span>
           </a>
         </div>
-      </div>
 
-      {/* Footer panel */}
-      <div
-        className="box-border w-full lg:flex-1 h-[326px] md:h-[400px] lg:h-full shrink-0
-                   flex flex-col gap-[133.7px] md:gap-[188px] p-[14px] md:p-[20px]
-                   justify-between items-start bg-[#1a1a1aff]
-                   rounded-[9px_4px_4px_4px] lg:rounded-[12px_6px_6px_6px] overflow-hidden"
-      >
-        <div className="relative w-[58px] md:w-[82px] h-[23px] md:h-[32px] shrink-0">
+        {/* Car image */}
+        <div className="relative box-border w-full h-[218px] md:h-[385px] shrink-0 lg:flex-[763_1_0%] lg:max-w-[763px] lg:h-[385px] rounded-[6px] overflow-hidden order-1 lg:order-2">
           <Image
-            src="/Apex-lp-assets/Apex_Logo_Dark.png"
-            alt="Apex"
+            src="/Apex-lp-assets/cta-car.jpg"
+            alt="Premium vehicle"
             fill
-            sizes="82px"
+            sizes="(max-width: 1024px) 100vw, 763px"
             className="object-cover object-center"
           />
         </div>
+      </div>
 
-        <div className="box-border w-full h-fit md:h-[114.287px] shrink-0 flex flex-col lg:flex-row gap-[20px] md:gap-[40px] lg:gap-[40px] justify-start lg:justify-between items-start">
-          {/* Left: headline + nav */}
-          <div className="box-border w-fit h-fit lg:h-full shrink-0 lg:flex-1 flex flex-col gap-[17.1px] md:gap-[24px] justify-start items-start">
-            <p className="rot1 text-[16px] leading-[19px] md:text-[20px] md:leading-[24px] box-border w-full m-0 max-w-[302px] md:max-w-[278px] text-[#ffffffff] font-semibold tracking-[-0.5px] text-left">
-              Premium car audio, accessories &amp; upgrades for your rides.
-            </p>
-            <nav className="box-border w-fit h-fit lg:h-[18.052px] shrink-0 flex flex-row gap-[14.2px] md:gap-[20px] justify-start items-center">
-              <a
-                href="#categories"
-                className="rot2 text-[11px] leading-[12px] md:text-[14px] md:leading-[15px] text-[#ffffffb3] font-medium whitespace-nowrap no-underline hover:text-white transition-colors"
-              >
-                Services
-              </a>
-              <a
-                href="#why-us"
-                className="rot2 text-[11px] leading-[12px] md:text-[14px] md:leading-[15px] text-[#ffffffb3] font-medium whitespace-nowrap no-underline hover:text-white transition-colors"
-              >
-                Why us
-              </a>
-            </nav>
-          </div>
+      {/* Footer bar — logo / links / socials (stacked on mobile, row on tablet+desktop) */}
+      <div
+        className="box-border w-full h-fit shrink-0 flex flex-col md:flex-row
+                   gap-[57px] md:gap-[20px] p-[20px]
+                   justify-start md:justify-between items-center
+                   rounded-[12px_6px_6px_6px] overflow-hidden"
+      >
+        {/* Logo */}
+        <div className="relative w-[82px] h-[32px] shrink-0">
+          <Image
+            src="/Apex-lp-assets/Apex_Logo_Light.png"
+            alt="Apex"
+            fill
+            sizes="82px"
+            className="object-contain object-center"
+          />
+        </div>
 
-          {/* Right: socials + legal */}
-          <div className="box-border w-fit h-fit lg:h-full shrink-0 lg:flex-1 flex flex-col gap-[20px] md:gap-[80px] justify-start lg:justify-between items-start lg:items-end">
-            <div className="box-border w-fit h-[20px] md:h-[24px] shrink-0 flex flex-row gap-[12px] md:gap-[8px] justify-start items-start order-2 lg:order-1">
-              <FacebookIcon className={SOCIAL_CLASS} />
-              <WhatsAppIcon className={SOCIAL_CLASS} />
-              <InstagramIcon className={SOCIAL_CLASS} />
-            </div>
-            <div className="box-border w-fit h-fit lg:h-[18.108px] shrink-0 flex flex-row gap-[14.2px] md:gap-[20px] justify-start items-start order-1 lg:order-2">
-              <a
-                href="#"
-                className="rot1 text-[11px] leading-[12px] md:text-[14px] md:leading-[15px] text-[#ffffffb3] font-medium tracking-[-0.4px] lg:tracking-[-0.5px] whitespace-nowrap no-underline hover:text-white transition-colors"
-              >
-                Privacy policy
-              </a>
-              <a
-                href="#"
-                className="rot1 text-[11px] leading-[12px] md:text-[14px] md:leading-[15px] text-[#ffffffb3] font-medium tracking-[-0.4px] lg:tracking-[-0.5px] whitespace-nowrap no-underline hover:text-white transition-colors"
-              >
-                Terms &amp; condition
-              </a>
-            </div>
+        {/* Links group */}
+        <div className="box-border w-fit h-fit shrink-0 flex flex-col md:flex-row gap-[40px] justify-start items-center">
+          <nav className="box-border w-fit h-fit shrink-0 flex flex-col md:flex-row gap-[20px] justify-center items-center">
+            <a
+              href="#categories"
+              className="text-[14px] leading-[1.1] text-[#1e1e1e] font-medium whitespace-nowrap no-underline hover:opacity-70 transition-opacity"
+            >
+              Services
+            </a>
+            <a
+              href="#why-us"
+              className="text-[14px] leading-[1.1] text-[#1e1e1e] font-medium whitespace-nowrap no-underline hover:opacity-70 transition-opacity"
+            >
+              Why us
+            </a>
+          </nav>
+          <div className="box-border w-fit h-fit shrink-0 flex flex-col md:flex-row gap-[20px] justify-between items-center">
+            <a
+              href="#"
+              className="text-[14px] leading-[1.1] tracking-[-0.5px] text-[#1e1e1e] font-medium whitespace-nowrap no-underline hover:opacity-70 transition-opacity"
+            >
+              Privacy policy
+            </a>
+            <a
+              href="#"
+              className="text-[14px] leading-[1.1] tracking-[-0.5px] text-[#1e1e1e] font-medium whitespace-nowrap no-underline hover:opacity-70 transition-opacity"
+            >
+              Terms &amp; condition
+            </a>
           </div>
+        </div>
+
+        {/* Social icons */}
+        <div className="box-border w-fit h-[24px] shrink-0 flex flex-row gap-[8px] justify-start items-center">
+          <FacebookIcon className={SOCIAL_CLASS} />
+          <WhatsAppIcon className={SOCIAL_CLASS} />
+          <InstagramIcon className={SOCIAL_CLASS} />
         </div>
       </div>
     </footer>

@@ -20,7 +20,7 @@ export default function Categories() {
       id="categories"
       className="box-border w-full h-fit shrink-0 flex flex-col
                  gap-[7.1px] p-[40px_20px] md:gap-[10px] md:p-[64px_32px] lg:p-[80px_40px]
-                 justify-start items-start bg-[#f4f4f5] overflow-hidden"
+                 justify-start items-start bg-[#f0f0f0] overflow-hidden"
     >
       <div className="box-border w-full h-fit shrink-0 flex flex-col gap-[24px] md:gap-[60px] justify-start items-start">
         <h2

@@ -7,7 +7,7 @@ export default function Hero() {
                  gap-[20px] p-[120px_20px_0px_20px]
                  md:gap-[32px] md:p-[64px_32px]
                  lg:gap-[20px] lg:p-[40px_40px_100px_40px]
-                 justify-start items-center md:items-start bg-[#f4f4f5] overflow-hidden relative lg:static"
+                 justify-start items-center md:items-start bg-[#f0f0f0] overflow-hidden relative lg:static"
     >
       <Navbar />
 
