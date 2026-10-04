@@ -1,4 +1,5 @@
 import CategoryCard from "./CategoryCard";
+import CardsReveal from "./CardsReveal";
 
 const CATEGORIES = [
   { number: "01", label: "Audio", image: "/Apex-lp-assets/image.jpg" },
@@ -36,11 +37,11 @@ export default function Categories() {
           1 column (mobile) → 2 columns (tablet) → 3 columns (desktop).
           Row gap 39px / column gap 20px matches the canvas spacing.
         */}
-        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[20px] md:gap-y-[39px]">
+        <CardsReveal className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[20px] md:gap-y-[39px]">
           {CATEGORIES.map((c) => (
             <CategoryCard key={c.number} {...c} />
           ))}
-        </div>
+        </CardsReveal>
       </div>
     </section>
   );

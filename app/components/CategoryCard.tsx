@@ -22,9 +22,12 @@ const DEFAULT_DETAILS: CardDetails = {
 };
 
 // Asymmetric motion per the design:
-//   default → hovered : cubic-bezier(0.36, 0, 0.18, 1)   (applied on hover-in)
-//   hovered → default : cubic-bezier(0.36, 0, 0.6, 0.99) (applied on hover-out, the base)
-const EASE = "ease-[cubic-bezier(0.36,0,0.6,0.99)] group-hover:ease-[cubic-bezier(0.36,0,0.18,1)]";
+//   default → hovered/active : cubic-bezier(0.36, 0, 0.18, 1)   (applied when expanding)
+//   hovered/active → default : cubic-bezier(0.36, 0, 0.6, 0.99) (base, applied when collapsing)
+// Desktop (lg+) expands on pointer hover; mobile/tablet expand via the
+// `.is-active` class toggled on scroll (see CardsReveal).
+const EASE =
+  "ease-[cubic-bezier(0.36,0,0.6,0.99)] lg:group-hover:ease-[cubic-bezier(0.36,0,0.18,1)] group-[.is-active]:ease-[cubic-bezier(0.36,0,0.18,1)]";
 const DUR = "duration-[450ms]";
 
 /**
@@ -67,7 +70,8 @@ export default function CategoryCard({
 
         {/* Hover-revealed detail panel (animated via grid-rows 0fr → 1fr) */}
         <div
-          className={`grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100
+          className={`grid grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] group-[.is-active]:grid-rows-[1fr]
+                      opacity-0 lg:group-hover:opacity-100 group-[.is-active]:opacity-100
                       transition-[grid-template-rows,opacity] ${DUR} ${EASE}`}
         >
           <div className="min-h-0 overflow-hidden">
