@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -42,13 +43,8 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Visual */}
-        <div
-          className="box-border w-full h-[400px] md:h-[380px] lg:flex-1 lg:max-w-[620px] lg:h-[521px] shrink-0
-                     [background-image:linear-gradient(#00000033,_#00000033),_url('/Apex-lp-assets/image.jpg')]
-                     [background-repeat:no-repeat,_no-repeat] [background-size:100%_100%,_cover]
-                     [background-position:0%_0%,_center] rounded-[6px] overflow-hidden"
-        />
+        {/* Visual — looping hero animation recreated from Figma */}
+        <HeroVisual className="box-border w-full h-[400px] md:h-[380px] lg:flex-1 lg:max-w-[620px] lg:h-[521px] shrink-0" />
       </div>
     </section>
   );
