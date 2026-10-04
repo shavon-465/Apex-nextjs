@@ -43,12 +43,14 @@ export default function CategoryCard({
   details = DEFAULT_DETAILS,
 }: CategoryCardProps) {
   return (
-    <div className="group box-border w-full md:flex-1 h-fit md:h-[300px] lg:h-[361px] shrink-0 flex flex-col gap-[8px] justify-center items-center bg-[#ffffff] rounded-[6px] overflow-hidden">
-      {/* Image slot — flex-1 on tablet/desktop so it shrinks as the panel opens */}
+    <div className="group box-border w-full md:flex-1 h-fit lg:h-[361px] shrink-0 flex flex-col gap-[8px] justify-center items-center bg-[#ffffff] rounded-[6px] overflow-hidden">
+      {/* Image slot — fixed heights below lg (shrinks when expanded), flex-1 on desktop */}
       <div
-        className={`box-border w-full h-[234px] md:h-auto md:flex-1 md:min-h-0 shrink-0 [box-shadow:1px_2px_8px_#00000014]
+        className={`box-border w-full shrink-0 h-[234px] md:h-[224px] lg:h-auto lg:flex-1 lg:min-h-0
+                   max-md:group-[.is-active]:h-[194px] md:max-lg:group-[.is-active]:h-[50px]
+                   [box-shadow:1px_2px_8px_#00000014]
                    bg-[#FFFFFF] bg-no-repeat bg-cover bg-center rounded-[0px_0px_8px_8px] overflow-hidden
-                   transition-[flex-basis] ${DUR} ${EASE}`}
+                   transition-[height] ${DUR} ${EASE}`}
         style={{ backgroundImage: `url('${image}')` }}
       />
 
