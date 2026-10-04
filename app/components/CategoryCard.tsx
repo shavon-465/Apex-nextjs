@@ -71,7 +71,7 @@ export default function CategoryCard({
                       transition-[grid-template-rows,opacity] ${DUR} ${EASE}`}
         >
           <div className="min-h-0 overflow-hidden">
-            <div className="box-border w-full flex flex-row gap-[10px] p-[0px_16px_16px_16px] justify-between items-start">
+            <div className="box-border w-full flex flex-row gap-[10px] p-[20px_16px_16px_16px] justify-between items-start">
               <div className="flex flex-col text-[14px] leading-[1.4] text-[#00000099] font-medium text-left">
                 {details.left.map((line, i) => (
                   <span key={i}>{line}</span>
