@@ -2,17 +2,61 @@ import CategoryCard from "./CategoryCard";
 import CardsReveal from "./CardsReveal";
 
 const CATEGORIES = [
-  { number: "01", label: "Audio", image: "/Apex-lp-assets/image.jpg" },
-  { number: "02", label: "Exterior", image: "/Apex-lp-assets/image.jpg" },
-  { number: "03", label: "Performance", image: "/Apex-lp-assets/image.jpg" },
+  {
+    number: "01",
+    label: "Audio",
+    image: "/Apex-lp-assets/card-audio.jpg",
+    details: {
+      left: ["Android/Apple CarPlay systems", "Head units / infotainment", "Speakers", "Subwoofers"],
+      right: ["Amplifiers", "DSP / sound processors", "Reverse cameras", "Audio tuning"],
+    },
+  },
+  {
+    number: "02",
+    label: "Interior",
+    image: "/Apex-lp-assets/card-interior.jpg",
+    tracking: "-1px",
+    details: {
+      left: ["Seat covers", "Floor mats", "Roof lining", "Interior lighting"],
+      right: ["Steering covers", "Dashboard accessories", "Interior detailing", "Ambient lighting"],
+    },
+  },
+  {
+    number: "03",
+    label: "Exterior",
+    image: "/Apex-lp-assets/card-exterior.jpg",
+    details: {
+      left: ["Body kits", "Spoilers", "Grilles", "LED lights"],
+      right: ["DRLs", "Window tint", "Chrome/black-out accessories", "Exterior detailing"],
+    },
+  },
   {
     number: "04",
-    label: "Interior",
-    image: "/Apex-lp-assets/image-2.jpg",
-    tracking: "-1px",
+    label: "Lighting",
+    image: "/Apex-lp-assets/card-lighting.jpg",
+    details: {
+      left: ["LED headlights", "Fog lights", "Projector upgrades"],
+      right: ["Interior/ambient lights", "Strobe/emergency lights", "Underbody lighting"],
+    },
   },
-  { number: "05", label: "Technology", image: "/Apex-lp-assets/image.jpg" },
-  { number: "06", label: "Safety", image: "/Apex-lp-assets/image.jpg" },
+  {
+    number: "05",
+    label: "Protection",
+    image: "/Apex-lp-assets/card-protection.jpg",
+    details: {
+      left: ["Dash cameras", "Parking/reverse cameras", "Car alarms", "GPS trackers"],
+      right: ["Central locking", "PPF", "Ceramic coating", "Window/security film"],
+    },
+  },
+  {
+    number: "06",
+    label: "Customisation",
+    image: "/Apex-lp-assets/card-customisation.jpg",
+    details: {
+      left: ["Power windows", "Sensors", "Horns", "Phone chargers"],
+      right: ["Wireless chargers", "USB accessories", "Door visors", "Custom installations"],
+    },
+  },
 ] as const;
 
 export default function Categories() {

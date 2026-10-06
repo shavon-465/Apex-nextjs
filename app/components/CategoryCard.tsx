@@ -1,4 +1,4 @@
-type CardDetails = { left: string[]; right: string[] };
+type CardDetails = { left: readonly string[]; right: readonly string[] };
 
 type CategoryCardProps = {
   number: string;
