@@ -48,7 +48,6 @@ export default function CategoryCard({
       <div
         className={`box-border w-full shrink-0 h-[234px] md:h-[224px] lg:h-auto lg:flex-1 lg:min-h-0
                    max-md:group-[.is-active]:h-[194px] md:max-lg:group-[.is-active]:h-[50px]
-                   [box-shadow:1px_2px_8px_#00000014]
                    bg-[#FFFFFF] bg-no-repeat bg-cover bg-center rounded-[0px_0px_8px_8px] overflow-hidden
                    transition-[height] ${DUR} ${EASE}`}
         style={{ backgroundImage: `url('${image}')` }}
