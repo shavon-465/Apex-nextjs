@@ -4,22 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * Navbar — recreated 1:1 from the Framer "Navbar" (desktop) and
+ * Navbar — recreated from the Framer "Navbar" (desktop) and
  * "Navbar movile" (tablet/mobile) components.
  *
- * Desktop (lg+): dark pill showing the logo + "Menu"; on hover it widens
- *   (390px -> 600px) and cross-fades to Service / Why us / Contact.
- * Mobile/tablet (<lg): dark bar with logo + hamburger; tapping opens a
- *   full menu (SERVICES / WHY US right-aligned at 24px + full-width CONTACT).
+ * Desktop (lg+): dark pill with logo + "Menu" + hamburger icon; on hover it
+ *   widens (320px -> 600px) and cross-fades to Service / Why us / Contact with
+ *   the icon swapping to an X.
+ * Mobile/tablet (<lg): dark bar (56px) with logo + hamburger; tapping opens a
+ *   320px menu (Service / Why us right-aligned + full-width Contact), icon -> X.
  *
  * Dark #1e1e1e, Instrument Sans 600. Desktop: 4px radius, 12px/24px padding.
- * Mobile: 8px radius, 16px/12px padding. Labels differ per breakpoint (Framer).
+ * Mobile: 8px radius, 16px/12px padding.
  */
 
 const FONT = "[font-family:var(--font-instrument),ui-sans-serif,sans-serif]";
 const LINKS = [
-  { desktop: "Service", mobile: "SERVICES", href: "#categories" },
-  { desktop: "Why us", mobile: "WHY US", href: "#why-us" },
+  { label: "Service", href: "#categories" },
+  { label: "Why us", href: "#why-us" },
 ];
 
 function Logo({ className }: { className: string }) {
@@ -37,17 +38,17 @@ function Logo({ className }: { className: string }) {
   );
 }
 
-function Burger() {
+function Burger({ className = "" }: { className?: string }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden className={className}>
       <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
 
-function CloseIcon() {
+function CloseIcon({ className = "" }: { className?: string }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden className={className}>
       <path d="M5 5l14 14M19 5L5 19" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
@@ -62,24 +63,30 @@ export default function Navbar() {
       <div className={`hidden lg:block ${FONT}`}>
         <div
           className="group relative flex flex-row items-center shrink-0
-                     w-[390px] hover:w-[600px] h-[48px] p-[12px_24px]
+                     w-[320px] hover:w-[600px] h-[48px] p-[12px_24px]
                      bg-[#1e1e1e] rounded-[4px] overflow-hidden
                      transition-[width] duration-[600ms] ease-[cubic-bezier(0.25,0,0,0.98)]"
         >
           <Logo className="w-[62px] h-[24px]" />
 
-          {/* Collapsed label */}
+          {/* Icon at far right — hamburger (collapsed) / X (hover) */}
+          <div className="absolute right-[24px] top-1/2 -translate-y-1/2 w-[24px] h-[24px]">
+            <Burger className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-[250ms]" />
+            <CloseIcon className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[250ms]" />
+          </div>
+
+          {/* Collapsed label (left of the icon) */}
           <span
-            className="absolute right-[24px] top-1/2 -translate-y-1/2 whitespace-nowrap
+            className="absolute right-[56px] top-1/2 -translate-y-1/2 whitespace-nowrap
                        text-[14px] leading-[1.2] font-semibold text-white
                        opacity-100 group-hover:opacity-0 transition-opacity duration-[250ms]"
           >
             Menu
           </span>
 
-          {/* Expanded links */}
+          {/* Expanded links (left of the icon) */}
           <div
-            className="absolute right-[24px] top-1/2 -translate-y-1/2 flex flex-row items-center gap-[12px] whitespace-nowrap
+            className="absolute right-[56px] top-1/2 -translate-y-1/2 flex flex-row items-center gap-[12px] whitespace-nowrap
                        opacity-0 group-hover:opacity-100 transition-opacity duration-[350ms] group-hover:delay-[150ms]"
           >
             {LINKS.map((l) => (
@@ -88,7 +95,7 @@ export default function Navbar() {
                 href={l.href}
                 className="text-[12px] leading-[1.2] font-semibold text-white no-underline hover:opacity-80 transition-opacity"
               >
-                {l.desktop}
+                {l.label}
               </a>
             ))}
             <a
@@ -103,9 +110,13 @@ export default function Navbar() {
 
       {/* ---------- Mobile / tablet (<lg): dark bar with hamburger ---------- */}
       <div className={`lg:hidden absolute z-20 top-[16px] left-[20px] right-[20px] md:top-[24px] md:left-[32px] md:right-[32px] ${FONT}`}>
-        <div className="flex flex-col gap-[16px] p-[16px_12px] bg-[#1e1e1e] rounded-[8px] overflow-hidden">
+        <div
+          className={`flex flex-col justify-between p-[16px_12px] bg-[#1e1e1e] rounded-[8px] overflow-hidden
+                      transition-[height] duration-[400ms] ease-[cubic-bezier(0.25,0,0.14,1)]
+                      ${open ? "h-[320px]" : "h-[56px]"}`}
+        >
           {/* Top row */}
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center justify-between shrink-0">
             <Logo className="w-[54px] h-[21px]" />
             <button
               type="button"
@@ -118,35 +129,31 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Collapsible menu */}
+          {/* Menu (revealed at the bottom when open) */}
           <div
-            className={`grid transition-[grid-template-rows,opacity] duration-[400ms] ease-[cubic-bezier(0.25,0,0.14,1)] ${
-              open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            className={`flex flex-col items-end gap-[12px] shrink-0 transition-opacity duration-[300ms] ${
+              open ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="overflow-hidden">
-              <div className="flex flex-col items-end gap-[12px] pt-[4px]">
-                <div className="flex flex-col items-end gap-[12px]">
-                  {LINKS.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      onClick={() => setOpen(false)}
-                      className="text-[24px] leading-[1.2] font-semibold text-white no-underline"
-                    >
-                      {l.mobile}
-                    </a>
-                  ))}
-                </div>
+            <div className="flex flex-col items-end gap-[12px]">
+              {LINKS.map((l) => (
                 <a
-                  href="#"
+                  key={l.href}
+                  href={l.href}
                   onClick={() => setOpen(false)}
-                  className="w-full flex items-center justify-center bg-white rounded-[4px] p-[8px] no-underline"
+                  className="text-[24px] leading-[1.2] font-semibold text-white no-underline"
                 >
-                  <span className="text-[14px] leading-[1.2] font-semibold text-[#3b3b3b]">CONTACT</span>
+                  {l.label}
                 </a>
-              </div>
+              ))}
             </div>
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="w-full flex items-center justify-center bg-white rounded-[4px] p-[8px] no-underline"
+            >
+              <span className="text-[14px] leading-[1.2] font-semibold text-[#3b3b3b]">Contact</span>
+            </a>
           </div>
         </div>
       </div>
