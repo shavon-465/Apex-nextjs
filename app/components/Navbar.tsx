@@ -7,23 +7,24 @@ import { useState } from "react";
  * Navbar — recreated 1:1 from the Framer "Navbar" (desktop) and
  * "Navbar movile" (tablet/mobile) components.
  *
- * Desktop (lg+): dark pill showing the logo + "MENU"; on hover it widens
- *   (321px -> 600px) and cross-fades to SERVICES / WHY US / CONTACT.
+ * Desktop (lg+): dark pill showing the logo + "Menu"; on hover it widens
+ *   (390px -> 600px) and cross-fades to Service / Why us / Contact.
  * Mobile/tablet (<lg): dark bar with logo + hamburger; tapping opens a
- *   full menu (SERVICES / WHY US right-aligned at 32px + full-width CONTACT).
+ *   full menu (SERVICES / WHY US right-aligned at 24px + full-width CONTACT).
  *
- * Dark #1e1e1e, 8px radius, 20px padding, Instrument Sans 600 — all per Framer.
+ * Dark #1e1e1e, Instrument Sans 600. Desktop: 4px radius, 12px/24px padding.
+ * Mobile: 8px radius, 16px/12px padding. Labels differ per breakpoint (Framer).
  */
 
 const FONT = "[font-family:var(--font-instrument),ui-sans-serif,sans-serif]";
 const LINKS = [
-  { label: "SERVICES", href: "#categories" },
-  { label: "WHY US", href: "#why-us" },
+  { desktop: "Service", mobile: "SERVICES", href: "#categories" },
+  { desktop: "Why us", mobile: "WHY US", href: "#why-us" },
 ];
 
-function Logo() {
+function Logo({ className }: { className: string }) {
   return (
-    <div className="relative w-[73px] h-[28.5px] shrink-0">
+    <div className={`relative shrink-0 ${className}`}>
       <Image
         src="/Apex-lp-assets/apex-logo-nav.png"
         alt="Apex"
@@ -61,40 +62,40 @@ export default function Navbar() {
       <div className={`hidden lg:block ${FONT}`}>
         <div
           className="group relative flex flex-row items-center shrink-0
-                     w-[321px] hover:w-[600px] h-[68px] p-[20px]
-                     bg-[#1e1e1e] rounded-[8px] overflow-hidden
+                     w-[390px] hover:w-[600px] h-[48px] p-[12px_24px]
+                     bg-[#1e1e1e] rounded-[4px] overflow-hidden
                      transition-[width] duration-[600ms] ease-[cubic-bezier(0.25,0,0,0.98)]"
         >
-          <Logo />
+          <Logo className="w-[62px] h-[24px]" />
 
           {/* Collapsed label */}
           <span
-            className="absolute right-[20px] top-1/2 -translate-y-1/2 whitespace-nowrap
-                       text-[16px] leading-[1.2] font-semibold text-white
+            className="absolute right-[24px] top-1/2 -translate-y-1/2 whitespace-nowrap
+                       text-[14px] leading-[1.2] font-semibold text-white
                        opacity-100 group-hover:opacity-0 transition-opacity duration-[250ms]"
           >
-            MENU
+            Menu
           </span>
 
           {/* Expanded links */}
           <div
-            className="absolute right-[20px] top-1/2 -translate-y-1/2 flex flex-row items-center gap-[12px] whitespace-nowrap
+            className="absolute right-[24px] top-1/2 -translate-y-1/2 flex flex-row items-center gap-[12px] whitespace-nowrap
                        opacity-0 group-hover:opacity-100 transition-opacity duration-[350ms] group-hover:delay-[150ms]"
           >
             {LINKS.map((l) => (
               <a
-                key={l.label}
+                key={l.href}
                 href={l.href}
-                className="text-[16px] leading-[1.2] font-semibold text-white no-underline hover:opacity-80 transition-opacity"
+                className="text-[12px] leading-[1.2] font-semibold text-white no-underline hover:opacity-80 transition-opacity"
               >
-                {l.label}
+                {l.desktop}
               </a>
             ))}
             <a
               href="#"
               className="flex items-center justify-center bg-white rounded-[4px] px-[8px] py-[4px] no-underline hover:opacity-90 transition-opacity"
             >
-              <span className="text-[12px] leading-[1.2] font-semibold text-[#3b3b3b]">CONTACT</span>
+              <span className="text-[12px] leading-[1.2] font-semibold text-[#3b3b3b]">Contact</span>
             </a>
           </div>
         </div>
@@ -102,10 +103,10 @@ export default function Navbar() {
 
       {/* ---------- Mobile / tablet (<lg): dark bar with hamburger ---------- */}
       <div className={`lg:hidden absolute z-20 top-[16px] left-[20px] right-[20px] md:top-[24px] md:left-[32px] md:right-[32px] ${FONT}`}>
-        <div className="flex flex-col gap-[20px] p-[20px] bg-[#1e1e1e] rounded-[8px] overflow-hidden">
+        <div className="flex flex-col gap-[16px] p-[16px_12px] bg-[#1e1e1e] rounded-[8px] overflow-hidden">
           {/* Top row */}
           <div className="flex flex-row items-center justify-between">
-            <Logo />
+            <Logo className="w-[54px] h-[21px]" />
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -124,16 +125,16 @@ export default function Navbar() {
             }`}
           >
             <div className="overflow-hidden">
-              <div className="flex flex-col items-end gap-[20px] pt-[4px]">
+              <div className="flex flex-col items-end gap-[12px] pt-[4px]">
                 <div className="flex flex-col items-end gap-[12px]">
                   {LINKS.map((l) => (
                     <a
-                      key={l.label}
+                      key={l.href}
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="text-[32px] leading-[1.2] font-semibold text-white no-underline"
+                      className="text-[24px] leading-[1.2] font-semibold text-white no-underline"
                     >
-                      {l.label}
+                      {l.mobile}
                     </a>
                   ))}
                 </div>
