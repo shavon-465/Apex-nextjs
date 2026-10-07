@@ -6,7 +6,7 @@ export default function Hero() {
     <section
       className="box-border w-full h-fit shrink-0 flex flex-col
                  gap-[20px] p-[120px_20px_0px_20px]
-                 md:gap-[32px] md:p-[64px_32px]
+                 md:gap-[32px] md:p-[112px_32px_64px_32px]
                  lg:gap-[20px] lg:p-[40px_40px_100px_40px]
                  justify-start items-center md:items-start bg-[#f0f0f0] overflow-hidden relative lg:static"
     >

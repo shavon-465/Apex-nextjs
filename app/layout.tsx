@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-geist",
+  display: "swap",
+});
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-instrument",
   display: "swap",
 });
 
@@ -20,7 +27,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} font-geist antialiased`}>
+      <body className={`${geist.variable} ${instrumentSans.variable} font-geist antialiased`}>
         {children}
       </body>
     </html>
