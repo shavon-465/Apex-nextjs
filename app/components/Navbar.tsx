@@ -131,11 +131,11 @@ export default function Navbar() {
 
           {/* Menu (revealed at the bottom when open) */}
           <div
-            className={`flex flex-col items-end gap-[12px] shrink-0 transition-opacity duration-[300ms] ${
+            className={`flex flex-col items-end gap-[40px] shrink-0 transition-opacity duration-[300ms] ${
               open ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="flex flex-col items-end gap-[12px]">
+            <div className="flex flex-col items-end gap-[16px]">
               {LINKS.map((l) => (
                 <a
                   key={l.href}
