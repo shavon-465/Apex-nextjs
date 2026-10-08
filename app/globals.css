@@ -54,26 +54,26 @@ body {
 @keyframes heroWipe1 {
   0% { clip-path: inset(0 0 0 0); }
   39.22% { clip-path: inset(0 0 0 0); animation-timing-function: cubic-bezier(0.35, 0, 0, 1); }
-  47.06% { clip-path: inset(100% 0 0 0); }
-  100% { clip-path: inset(100% 0 0 0); }
+  47.06% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 100% 0); }
 }
 @keyframes heroWipe2 {
   0% { clip-path: inset(0 0 0 0); }
   56.86% { clip-path: inset(0 0 0 0); animation-timing-function: cubic-bezier(0.35, 0, 0, 1); }
-  64.71% { clip-path: inset(100% 0 0 0); }
-  100% { clip-path: inset(100% 0 0 0); }
+  64.71% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 100% 0); }
 }
 @keyframes heroWipe3 {
   0% { clip-path: inset(0 0 0 0); }
   74.51% { clip-path: inset(0 0 0 0); animation-timing-function: cubic-bezier(0.35, 0, 0, 1); }
-  82.35% { clip-path: inset(100% 0 0 0); }
-  100% { clip-path: inset(100% 0 0 0); }
+  82.35% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 100% 0); }
 }
 @keyframes heroWipe4 {
   0% { clip-path: inset(0 0 0 0); }
   92.16% { clip-path: inset(0 0 0 0); animation-timing-function: cubic-bezier(0.35, 0, 0, 1); }
-  100% { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 0 100% 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-anim-layer { animation: none; clip-path: inset(100% 0 0 0); }
+  .hero-anim-layer { animation: none; clip-path: inset(0 0 100% 0); }
 }
