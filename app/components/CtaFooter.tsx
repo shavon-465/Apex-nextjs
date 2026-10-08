@@ -105,7 +105,7 @@ export default function CtaFooter() {
         </div>
 
         {/* Social icons */}
-        <div className="box-border w-fit h-[24px] shrink-0 flex flex-row gap-[8px] justify-start items-center">
+        <div className="box-border w-fit h-[24px] shrink-0 flex flex-row gap-[16px] justify-start items-center">
           <FacebookIcon className={SOCIAL_CLASS} />
           <WhatsAppIcon className={SOCIAL_CLASS} />
           <InstagramIcon className={SOCIAL_CLASS} />
