@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Instrument_Sans } from "next/font/google";
+import { Agentation } from "agentation";
 import "./globals.css";
 
 const geist = Geist({
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geist.variable} ${instrumentSans.variable} font-geist antialiased`}>
         {children}
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );
