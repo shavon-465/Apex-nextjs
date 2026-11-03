@@ -117,8 +117,15 @@ export default function CtaFooter() {
             <FacebookIcon className={SOCIAL_CLASS} />
           </a>
           <WhatsAppIcon className={SOCIAL_CLASS} />
-          {/* TODO: Instagram URL pending from client */}
-          <InstagramIcon className={SOCIAL_CLASS} />
+          <a
+            href="https://www.instagram.com/apexcaraudio.lk?stkn=bnlsMmh2ZHUyN2p2&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apex on Instagram"
+            className="block shrink-0 hover:opacity-70 transition-opacity"
+          >
+            <InstagramIcon className={SOCIAL_CLASS} />
+          </a>
           <a
             href="https://www.tiktok.com/@apexcaraudio.lk?_r=1&_t=ZS-9ANPz8nzFOU"
             target="_blank"
