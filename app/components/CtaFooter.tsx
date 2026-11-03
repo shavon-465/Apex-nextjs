@@ -116,7 +116,15 @@ export default function CtaFooter() {
           >
             <FacebookIcon className={SOCIAL_CLASS} />
           </a>
-          <WhatsAppIcon className={SOCIAL_CLASS} />
+          <a
+            href="https://wa.me/94778487076"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with Apex on WhatsApp"
+            className="block shrink-0 hover:opacity-70 transition-opacity"
+          >
+            <WhatsAppIcon className={SOCIAL_CLASS} />
+          </a>
           <a
             href="https://www.instagram.com/apexcaraudio.lk?stkn=bnlsMmh2ZHUyN2p2&utm_source=qr"
             target="_blank"
