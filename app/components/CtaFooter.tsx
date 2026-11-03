@@ -33,7 +33,8 @@ export default function CtaFooter() {
             </p>
           </div>
           <a
-            href="#"
+            href="tel:+94778487076"
+            aria-label="Call Apex on 077 848 7076"
             className="box-border w-full h-fit shrink-0 flex flex-col gap-[10px] p-[8px_16px] justify-center items-center bg-[#ffffff] rounded-[4px] no-underline transition-opacity hover:opacity-90"
           >
             <span className="text-[12px] text-[#141414] font-medium whitespace-nowrap">
@@ -118,7 +119,15 @@ export default function CtaFooter() {
           <WhatsAppIcon className={SOCIAL_CLASS} />
           {/* TODO: Instagram URL pending from client */}
           <InstagramIcon className={SOCIAL_CLASS} />
-          <TikTokIcon className={SOCIAL_CLASS} />
+          <a
+            href="https://www.tiktok.com/@apexcaraudio.lk?_r=1&_t=ZS-9ANPz8nzFOU"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apex on TikTok"
+            className="block shrink-0 hover:opacity-70 transition-opacity"
+          >
+            <TikTokIcon className={SOCIAL_CLASS} />
+          </a>
         </div>
       </div>
     </footer>

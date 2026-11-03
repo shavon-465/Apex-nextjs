@@ -34,7 +34,8 @@ export default function Hero() {
             </p>
           </div>
           <a
-            href="#"
+            href="tel:+94778487076"
+            aria-label="Call Apex on 077 848 7076"
             className="box-border w-fit h-fit shrink-0 flex flex-col gap-[10px] p-[8px_16px] justify-center items-center bg-[#212121ff] rounded-[6px] no-underline transition-opacity hover:opacity-90"
           >
             <span className="text-[11px] text-[#ffffffff] font-medium whitespace-nowrap">
