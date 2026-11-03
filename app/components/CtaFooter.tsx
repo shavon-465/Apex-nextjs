@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FacebookIcon, WhatsAppIcon, InstagramIcon } from "./Icons";
+import { FacebookIcon, WhatsAppIcon, InstagramIcon, TikTokIcon } from "./Icons";
 
 const SOCIAL_CLASS =
   "box-border w-[24px] shrink-0 h-[24px] overflow-hidden relative";
@@ -106,9 +106,19 @@ export default function CtaFooter() {
 
         {/* Social icons */}
         <div className="box-border w-fit h-[24px] shrink-0 flex flex-row gap-[16px] justify-start items-center">
-          <FacebookIcon className={SOCIAL_CLASS} />
+          <a
+            href="https://www.facebook.com/share/1CcWc2pT1A/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apex on Facebook"
+            className="block shrink-0 hover:opacity-70 transition-opacity"
+          >
+            <FacebookIcon className={SOCIAL_CLASS} />
+          </a>
           <WhatsAppIcon className={SOCIAL_CLASS} />
+          {/* TODO: Instagram URL pending from client */}
           <InstagramIcon className={SOCIAL_CLASS} />
+          <TikTokIcon className={SOCIAL_CLASS} />
         </div>
       </div>
     </footer>
